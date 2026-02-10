@@ -34,14 +34,15 @@ The core strength of this backend is the relational integrity. Below is an examp
 ```sql
 -- Example: Retrieving all sessions for a specific patient using JOINs
 SELECT 
-    S.data_sessao, 
-    S.relatorio, 
+    S.data AS Data_Sessao, 
+    S.resumo_sessao, 
     P.nome AS Paciente, 
     Psi.nome AS Psicologo
 FROM Sessao S
-INNER JOIN Paciente P ON S.id_paciente = P.id
-INNER JOIN Psicologo Psi ON S.id_psicologo = Psi.id
-WHERE P.id = ?;
+INNER JOIN Anamnese A ON S.idAnamnese = A.idAnamnese
+INNER JOIN Paciente P ON A.idPaciente = P.idPaciente
+INNER JOIN Psicologo Psi ON A.idPsicologo = Psi.idPsicologo
+WHERE P.idPaciente = ?;
 ```
 
 ## ⚙️ How to Run
@@ -53,15 +54,15 @@ WHERE P.id = ?;
 
 2. **Database Setup:**
 
-    Import the CriaBancoConsultorio.sql file into your MySQL instance.
+* Import the CriaBancoConsultorio.sql file into your MySQL instance.
 
-    Important: Configure your database credentials in src/main/java/persistencia/ConFactory.java.
+* Important: Configure your database credentials in src/main/java/persistencia/ConFactory.java.
 
 3. **Build & Run:**
 
-    Open the project in IntelliJ, NetBeans or Eclipse.
+* Open the project in IntelliJ, NetBeans or Eclipse.
 
-    Run the main class: apresentacao.fmLogin.
+* Run the main class: apresentacao.fmLogin.
 
 4. **Default Credentials:**
 
