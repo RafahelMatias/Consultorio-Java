@@ -54,17 +54,17 @@ WHERE P.idPaciente = ?;
 
 2. **Database Setup:**
 
-* Import the CriaBancoConsultorio.sql file into your MySQL instance.
+    * Import the CriaBancoConsultorio.sql file into your MySQL instance.
 
-* Important: Configure your database credentials in src/main/java/persistencia/ConFactory.java.
+    * Important: Configure your database credentials in src/main/java/persistencia/ConFactory.java.
 
 3. **Build & Run:**
 
-* Open the project in IntelliJ, NetBeans or Eclipse.
+    * Open the project in IntelliJ, NetBeans or Eclipse.
 
-* Run the main class: apresentacao.fmLogin.
+    * Run the main class: apresentacao.fmLogin.
 
 4. **Default Credentials:**
 
-    User: user
-    Password: 123
+    * User: user
+    * Password: 123
